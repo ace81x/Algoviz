@@ -1,0 +1,160 @@
+/* --- GLOBAL RESET & THEME --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Override Vite's default root behavior */
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.app-container { 
+  display: flex; 
+  flex-direction: column; 
+  height: 100vh; 
+  width: 100vw;
+}
+
+/* --- TOP NAVBAR --- */
+.top-nav { 
+  background-color: #111; 
+  color: white; 
+  height: 50px; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 20px; 
+  font-size: 14px; 
+  z-index: 100; 
+}
+.logo-section { display: flex; align-items: center; margin-right: 40px; }
+.logo-text { font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+.route-text { color: #888; margin-left: 5px; }
+.algo-tabs { display: flex; gap: 20px; font-weight: 600; color: #666; cursor: pointer; }
+.algo-tabs .active-tab { color: white; }
+
+/* --- MAIN CANVAS --- */
+.canvas { 
+  flex-grow: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: relative; 
+}
+
+/* --- THE BARS --- */
+.array-container { 
+  display: flex; 
+  align-items: flex-end; 
+  gap: 4px; 
+  /* Shifts the bars up so they never overlap the code box */
+  transform: translateY(-40px);
+}
+.bar-wrapper { display: flex; flex-direction: column; align-items: center; }
+.array-bar { width: 40px; background-color: #add8e6; color: black; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 5px; font-size: 16px; transition: height 0.2s ease, background-color 0.2s ease; }
+.array-bar.comparing { background-color: #d2737d; }
+.bar-index { margin-top: 5px; font-size: 14px; font-weight: bold; color: #333; }
+
+/* --- PSEUDO-CODE TRACKER --- */
+.code-tracker { 
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
+  background-color: #cb5948; 
+  padding: 15px 0; 
+  box-shadow: -5px -5px 15px rgba(0,0,0,0.1); 
+  font-family: 'Courier New', Courier, monospace; 
+  font-size: 14px; 
+  color: white; 
+  min-width: 400px; 
+  z-index: 50; 
+}
+.code-line { padding: 2px 20px; transition: background-color 0.1s; }
+.code-line pre { margin: 0; white-space: pre-wrap; font-size: 13px; }
+.code-line.active-line { background-color: black; color: white; font-weight: bold; }
+
+/* --- BOTTOM CONTROL BAR (MEDIA PLAYER) --- */
+.bottom-bar { 
+  background-color: #111; 
+  height: 50px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 0 20px; 
+  color: white; 
+  font-size: 14px; 
+  z-index: 100; 
+}
+.speed-controls { display: flex; align-items: center; gap: 10px; width: 200px; }
+.mini-slider { width: 80px; cursor: pointer; }
+.media-controls { 
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+  flex-grow: 1; 
+  justify-content: center; 
+  max-width: 800px; 
+}
+.media-buttons { display: flex; align-items: center; gap: 8px; }
+.media-buttons button { background: none; border: none; color: white; font-size: 16px; cursor: pointer; padding: 5px; transition: color 0.2s; }
+.media-buttons button:hover { color: #add8e6; }
+.media-buttons .play-btn-main { font-size: 20px; }
+.timeline-slider { flex-grow: 1; cursor: pointer; height: 4px; -webkit-appearance: none; background: #444; outline: none; border-radius: 2px; }
+.timeline-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border-radius: 50%; background: #add8e6; cursor: pointer; }
+.footer-spacer { width: 200px; } /* Balances the layout so the media controls stay perfectly centered */
+.array-bar.comparing { background-color: #d2737d; } /* The red highlight */
+.array-bar.sorted { background-color: #f39c12; color: white; } /* NEW: The orange sorted highlight */
+
+/* --- CUSTOM INPUT PANEL (BOTTOM LEFT) --- */
+.input-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #5c6bc0; /* VisuAlgo's classic blue menu color */
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+
+.custom-array-input {
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  width: 200px;
+}
+
+.action-btn {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #333;
+}
+
+/* Make the Sort button pop */
+.action-btn.sort-btn {
+  background-color: #cb5948; /* Red/Orange accent color */
+}
+
+.action-btn.sort-btn:hover {
+  background-color: #a04030;
+}
