@@ -158,3 +158,75 @@ html, body {
 .action-btn.sort-btn:hover {
   background-color: #a04030;
 }
+
+/* GRAPH SPECIFIC CSS */
+.graph-node {
+  width: 40px; height: 40px; border-radius: 50%;
+  background-color: white; border: 3px solid #ccc;
+  display: flex; justify-content: center; align-items: center;
+  font-weight: bold; font-size: 16px; color: #333;
+  transition: all 0.3s ease;
+}
+.graph-node.current-node { background-color: #add8e6; border-color: #3b82f6; } /* Active Blue */
+.graph-node.visited-node { background-color: #f39c12; border-color: #e67e22; color: white; } /* Visited Orange */
+
+/* --- LEFT ALGORITHM MENU (VisuAlgo Style) --- */
+.left-menu {
+  position: absolute;
+  bottom: 20px; /* Anchors it to the bottom */
+  left: 0;      /* Flushed to the left edge */
+  background-color: #a4c639; /* The classic VisuAlgo green */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  width: 220px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+  z-index: 50;
+}
+
+.menu-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  color: white;
+}
+
+.menu-item:hover {
+  background-color: #8bb329; /* Slightly darker green on hover */
+}
+
+.menu-item.active {
+  background-color: #72961d; /* Deepest green for the selected active tab */
+  font-weight: bold;
+}
+
+/* --- GRAPH SPECIFIC CSS --- */
+.graph-node {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%;
+  background-color: white; 
+  border: 4px solid #333; /* Thicker, darker border */
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  font-weight: 900; /* Extra bold text */
+  font-size: 18px; 
+  color: #333;
+  transition: all 0.2s ease;
+  position: relative; /* Essential for positioning the red numbers */
+}
+
+.graph-node.current-node { background-color: #add8e6; border-color: #3b82f6; }
+.graph-node.visited-node { background-color: #f39c12; border-color: #e67e22; color: white; }
+
+/* The Red Topological Sort Numbers */
+.topo-index {
+  position: absolute;
+  bottom: -28px; /* Pushes the number right below the circle */
+  color: #e74c3c; /* VisuAlgo Red */
+  font-weight: 900;
+  font-size: 18px;
+}
